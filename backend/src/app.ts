@@ -16,6 +16,7 @@ app.use("/test", (_req, res) => {
   };
   res.json(body);
 });
+
 app.use(errorHandler);
 
 export default app;
