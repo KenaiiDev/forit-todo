@@ -103,6 +103,10 @@ A continuación se muestran algunas capturas de pantalla de la aplicación:
 
 ![Crear tarea](docs/img/crear-tarea.png)
 
+### Editar y completar tareas
+
+![Editar tarea](docs/img/editar-tarea.png)
+
 ---
 
 ## Scripts útiles
