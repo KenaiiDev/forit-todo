@@ -30,14 +30,14 @@ export default function TaskStats({ tasks, loading, error }: TaskStatsParams) {
   return (
     <div className="flex items-center w-full gap-6">
       <div className="flex items-center gap-2 px-4 py-2 bg-purple-800/30 rounded-full backdrop-blur-sm border border-purple-500/20">
-        <span className="text-sm text-purple-200">{pending} Active</span>
+        <span className="text-sm text-purple-200">{pending} Activas</span>
       </div>
       <div className="flex items-center gap-2 px-4 py-2 bg-green-800/30 rounded-full backdrop-blur-sm border border-green-500/20">
-        <span className="text-sm text-green-200">{completed} Done</span>
+        <span className="text-sm text-green-200">{completed} Finalizadas</span>
       </div>
       <div className="flex items-center gap-2 px-4 py-2 bg-indigo-800/30 rounded-full backdrop-blur-sm border border-indigo-500/20">
         <span className="text-sm text-indigo-200">
-          {percentComplete}% Complete
+          {percentComplete}% Completado
         </span>
       </div>
     </div>
