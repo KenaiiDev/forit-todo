@@ -8,8 +8,26 @@ export const taskService = {
     });
   },
 
-  getAll: async () => {
-    return await prismaClient.task.findMany({});
+  getAll: async (
+    query?: string,
+    status: "all" | "pending" | "completed" = "all"
+  ) => {
+    const where: {
+      title?: { contains: string };
+      completed?: boolean;
+    } = {};
+
+    if (query) {
+      where.title = { contains: query };
+    }
+
+    if (status === "completed") {
+      where.completed = true;
+    } else if (status === "pending") {
+      where.completed = false;
+    }
+
+    return await prismaClient.task.findMany({ where });
   },
 
   getById: async (id: TaskId) => {

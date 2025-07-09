@@ -46,10 +46,13 @@ const getAllTasks = async (
 ) => {
   try {
     const search = req.query.search as string | undefined;
+    const status = req.query.status as
+      | "all"
+      | "pending"
+      | "completed"
+      | undefined;
 
-    const tasks = search
-      ? await taskService.searchTask(search)
-      : await taskService.getAll();
+    const tasks = await taskService.getAll(search, status ?? "all");
 
     httpResponse.OK(res, tasks);
   } catch (error) {
